@@ -1,35 +1,35 @@
-let inputYear = document.getElementById("yearInput");
-let inputMonth = document.getElementById("monthInput");
-let inputDay = document.getElementById("dayInput");
+dateCalc();
 
-document.querySelector(".btn").addEventListener("click", validationCheck);
-    
+let inputYear = 2003;
+let inputMonth = 11;
+let inputDay = 7;
+
 function dateCalc() {
+    let inputYear = 2003;
+    let inputMonth = 11;
+    let inputDay = 7;
+
+    
     let currentDate = new Date();
+    console.log(currentDate);
     
     let currentYear = currentDate.getFullYear();
-    let currentMonth = currentDate.getMonth();
-    let currentDay = currentDate.getDay();
+    let currentMonth = currentDate.getMonth() + 1;
+    let currentDay = currentDate.getDate();
 
-    let calcYear = Math.abs(currentYear - inputYear.value);
-    let calcMonth = Math.abs(currentMonth - inputMonth.value);
-    let calcDay = Math.abs(currentDay - inputDay.value);
-
-
-    let dateDisplay = document.querySelectorAll(".dateDisplay");
-    dateDisplay[0].textContent = calcYear;
-    dateDisplay[1].textContent = calcMonth;
-    dateDisplay[2].textContent = calcDay;
-}
-
-function validationCheck(){
-    let inputValid = document.querySelector(".inputValid");
+    console.log(currentYear + " " + currentMonth + " " + currentDay);
     
-    if (inputDay.value === null){
-        inputValid.style.visibility = "visible";
-        inputValid.textContent = "Must be a valid day";
-    }   
-    else if (inputDay.value > 31 || inputDay.value < 1){
-        inputValid.style.visibility = "visible";
-    }
+    let calcYear = currentYear - inputYear;
+    let calcMonth = currentMonth - inputMonth;
+    let calcDay = currentDay - inputDay;
+
+    console.log(inputYear + " " + inputMonth + " " + inputDay);
+
+    console.log(calcYear + " " + calcMonth + " " + calcDay);
+    
+    let calcYearInDays = calcYear * 365;
+    let calcMonthInDays = (calcMonth * 30.41666);
+    
+    console.log(calcYearInDays + " " + calcMonthInDays);
+    
 }

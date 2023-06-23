@@ -39,6 +39,7 @@ body {
 
 .inputSecContainer {
     display: flex;
+    
     gap: 20px;
     font-weight: 700;
     font-size: 10px;
