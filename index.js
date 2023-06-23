@@ -75,17 +75,31 @@ function dateCalc() {
     let currentDate = new Date();
     
     let currentYear = currentDate.getFullYear();
-    let currentMonth = currentDate.getMonth();
-    let currentDay = currentDate.getDay();
+    let currentMonth = currentDate.getMonth() + 1;
+    let currentDay = currentDate.getDate();
 
-    let calcYear = Math.abs(currentYear - inputYear.value);
-    let calcMonth = Math.abs(currentMonth - inputMonth.value);
-    let calcDay = Math.abs(currentDay - inputDay.value);
+    let calcYear = currentYear - inputYear.value;
+    let calcMonth = currentMonth - inputMonth.value;
+    let calcDay = currentDay - inputDay.value;
 
+    let actualYear, actualMonth, actualDay;
+
+    actualYear = calcYear;
+    actualMonth = calcMonth;
+    actualDay = calcDay;
+
+    if (calcMonth <= 0){
+        actualMonth = 12 + calcMonth ;
+        actualYear = actualYear - 1;
+    }
+    if (calcDay < 0){
+        actualDay = 30 + calcDay;
+        actualMonth = actualMonth - 1;
+    }
 
     let dateDisplay = document.querySelectorAll(".dateDisplay");
-    dateDisplay[0].textContent = calcYear;
-    dateDisplay[1].textContent = calcMonth;
-    dateDisplay[2].textContent = calcDay;
+    dateDisplay[0].textContent = actualYear;
+    dateDisplay[1].textContent = actualMonth;
+    dateDisplay[2].textContent = actualDay;
 }
 
