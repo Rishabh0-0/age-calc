@@ -1,0 +1,35 @@
+let inputYear = document.getElementById("yearInput");
+let inputMonth = document.getElementById("monthInput");
+let inputDay = document.getElementById("dayInput");
+
+document.querySelector(".btn").addEventListener("click", validationCheck);
+    
+function dateCalc() {
+    let currentDate = new Date();
+    
+    let currentYear = currentDate.getFullYear();
+    let currentMonth = currentDate.getMonth();
+    let currentDay = currentDate.getDay();
+
+    let calcYear = Math.abs(currentYear - inputYear.value);
+    let calcMonth = Math.abs(currentMonth - inputMonth.value);
+    let calcDay = Math.abs(currentDay - inputDay.value);
+
+
+    let dateDisplay = document.querySelectorAll(".dateDisplay");
+    dateDisplay[0].textContent = calcYear;
+    dateDisplay[1].textContent = calcMonth;
+    dateDisplay[2].textContent = calcDay;
+}
+
+function validationCheck(){
+    let inputValid = document.querySelector(".inputValid");
+    
+    if (inputDay.value === null){
+        inputValid.style.visibility = "visible";
+        inputValid.textContent = "Must be a valid day";
+    }   
+    else if (inputDay.value > 31 || inputDay.value < 1){
+        inputValid.style.visibility = "visible";
+    }
+}

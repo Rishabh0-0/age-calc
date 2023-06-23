@@ -1,0 +1,117 @@
+:root {
+    --Pur-ple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    --Off-black: hsl(0, 0%, 8%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C1ECE4 ;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    border-bottom-right-radius: 60px;
+    min-width: 450px;
+}
+
+.inputSec {
+    display: flex;
+    gap: 20px;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.inputSecContainer {
+    display: flex;
+    flex-direction: column;   
+}
+
+
+input {
+    width: 90px;
+    height: 40px;
+    border: 1px solid #C1ECE4;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 10px;
+    
+}
+
+label {
+    letter-spacing: 2px;
+    color: var(--Light-red);
+}
+
+.btnSection {
+    margin: 30px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hr-line {
+    width: 450px;
+    border: none;
+    border-top: 2px solid #C1ECE4;
+}
+
+.btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--Pur-ple);  
+}
+
+.btn-triangle {
+    font-size: 50px;
+    line-height: 50px;
+    margin-left: 10px;;
+    color: white;
+}
+.btn-triangle:hover {
+    color: blue;
+}
+
+.btn:hover {
+    background-color: var(--Off-black);
+}
+
+h1 {
+    font-size: 70px;
+    line-height: 1em;
+}
+
+span {
+    color: var(--Pur-ple);
+}
+
+p {
+    font-size: 8px;
+    text-align: center;
+    margin-top: 5px;
+    visibility: hidden;
+}
+
+.warningBorder {
+    border: 3px solid red;
+}  
+
+
